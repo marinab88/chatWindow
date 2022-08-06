@@ -1,0 +1,91 @@
+body {
+  background-color: #334;
+  color: white;
+  height: 3000px;
+}
+
+/* Chat component styles */
+#chat {
+  padding: 10px;
+  /*width: 285px;
+  height: 400px; */
+  background-color: #eef;
+  border: 1px solid #666;
+  box-shadow: 5px 5px  #888888;
+  border-radius: 25px;
+  
+  /* css position: relative, fixed, sticky */
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+}
+
+#chat .chat-header {
+  height: 60px;
+  color: rgb(143, 118, 6);
+  border-bottom: 2px solid rgb(191, 191, 4);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* padding: 10px; */
+ }
+
+#chat .chat-header h3 {
+  float: left;
+}
+
+#chat .chat-header button {
+  float: right;
+  cursor: pointer;
+  /* background-image: linear-gradient(to right, yellow, red); */
+  border: none;
+  color: rgb(143, 118, 6);
+}
+
+#chat .chat-body {
+  height: 280px;
+  color: #334;
+}
+
+#chat .chat-footer {
+  height: 60px;
+  border-top: 2px solid rgb(191, 191, 4);
+ 
+  
+}
+
+#chat .form-send input {
+  padding: 20px;
+  border: none;
+}
+
+#chat .form-send button {
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#chat .form-send button:hover {
+  background-color: rgb(184, 184, 53);
+}
+
+#chat .chat-icon {
+  display: none;
+}
+
+#chat.hidden .chat-header,
+#chat.hidden .chat-body,
+#chat.hidden .chat-footer {
+  display: none;
+}
+
+#chat.hidden .chat-icon {
+  display: block;
+  font-size: 300%;
+  cursor: pointer;
+}
+
+#chat.hidden{
+  background: transparent;
+  border: none;
+}
+
+/* HW1: finish layouting: shadows, alignment, fonts,  colors, ...*/

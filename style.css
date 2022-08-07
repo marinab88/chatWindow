@@ -35,7 +35,6 @@ body {
 #chat .chat-header button {
   float: right;
   cursor: pointer;
-  /* background-image: linear-gradient(to right, yellow, red); */
   border: none;
   color: rgb(143, 118, 6);
 }
@@ -43,6 +42,26 @@ body {
 #chat .chat-body {
   height: 280px;
   color: #334;
+
+}
+/* HW 4: try to add '-' decorator */
+#chat .chat-body ul {
+  list-style-type: '- ';
+  padding: 0;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#chat .chat-body ul li {
+  margin: .8em;
+ 
+}
+
+#chat .chat-body ul li span {
+  float: right;
 }
 
 #chat .chat-footer {

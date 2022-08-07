@@ -8,9 +8,6 @@ const inputValue = chatWindow.children[2].firstElementChild.firstElementChild;
 // const chatBody = document.querySelector('#chat .chat-body');
 const chatBody = chatWindow.children[1];
 
-// const clock = document.createElement('div');
-// chatBody.append(clock);
-
 let messages = [];
 
 function initChat() {
@@ -59,7 +56,7 @@ function sendMessage(e) {
     date: renderClock()
   }
   messages.push(message);
-  console.log(message);
+  // console.log(message);
   // reset the input value
   inputValue.value = '';
 

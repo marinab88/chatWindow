@@ -12,13 +12,13 @@ let messages = [];
 
 function initChat() {
   let chatHidden = !!localStorage.getItem('chatHidden');
-  if(!chatHidden) {
+  if (!chatHidden) {
     openChat();
   }
   sendButton.addEventListener('click', sendMessage);
 
   let message_json = localStorage.getItem('messages');
-  if(message_json != null) {
+  if (message_json != null) {
     messages = JSON.parse(message_json);
   }
 
@@ -45,11 +45,11 @@ initChat();
 
 function sendMessage(e) {
   e.preventDefault();
- 
-// let content = inputValue.value;
+
+  // let content = inputValue.value;
   let message = {
     content: inputValue.value,
-    
+
     // HW6: add a property which contains the date
     //  hint: Date()
     // when the messages are rendered show hh:mm:ss
@@ -71,30 +71,35 @@ function saveMessages() {
 
 function renderMessages() {
   let html = '<ul>';
- 
-  for (let i=Math.max(messages.length - 7,0); i<messages.length;i++) {
-    html += `<li>${messages[i].content} <span >${messages[i].date} </span></li>`;
-  }
 
- // HW5: rewrite the loop code using Array.forEach()
-  // messages.forEach((message) => {
-    // html += `<li>${message.content} <span >${message.date} </span></li>`;
-  // });
+  // for (let i=Math.max(messages.length - 7,0); i<messages.length;i++) {
+  //   html += `<li>${messages[i].content} <span >${messages[i].date} </span></li>`;
+  // }
 
-  html += '</ul>'; 
-  chatBody.innerHTML = html;
+  // HW5: rewrite the loop code using Array.forEach()
+  messages.forEach((message, i) => {
   
+    if ( i >= messages.length -7 ) {
+   
+      html += `<li>${message.content} <span >${message.date} </span></li>`;
+
+    }
+  });
+
+  html += '</ul>';
+  chatBody.innerHTML = html;
+
 }
 
 function renderClock() {
   let date = new Date();
-  
+
   let hours = date.getHours();
   if (hours < 10) hours = `0${hours}`;
- 
+
   let minutes = date.getMinutes();
   if (minutes < 10) minutes = `0${minutes}`;
- 
+
   let seconds = date.getSeconds();
   if (seconds < 10) seconds = `0${seconds}`;
 
